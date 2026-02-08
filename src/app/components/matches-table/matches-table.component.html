@@ -1,0 +1,44 @@
+<form>
+    <div class="form-group mt-4">
+        <input type="text" class="form-control" [(ngModel)]="term" name="term">
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Score One</th>
+            <th>Score Two</th>
+            <th>Team One</th>
+            <th>Team Two</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elt of matchesTab | teamFilter: term">
+            <td>{{elt._id}}</td>
+            <td>{{elt.scoreOne}}</td>
+            <td>{{elt.scoreTwo}}</td>
+            <td>{{elt.teamOne}}</td>
+            <td>{{elt.teamTwo}}</td>
+            <td [ngClass]="{
+                red: elt.scoreOne<elt.scoreTwo ,
+                blue: elt.scoreOne==elt.scoreTwo ,
+                green : elt.scoreOne>elt.scoreTwo
+            }">
+                {{scoreMessage(elt)}}
+            </td>
+            <td>
+                <button class="btn btn-success mr-2" (click)="goToInfo(elt._id)">
+                    Info
+                </button>
+                <button class="btn btn-warning mr-2" (click)="goToEdit(elt._id)">
+                    Edit
+                </button>
+                <button class="btn btn-danger" (click)="deleteMatch(elt._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
