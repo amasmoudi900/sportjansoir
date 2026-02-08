@@ -49,4 +49,8 @@ export class MatchService {
     return this.httpClient.put<{ msg: string, isUpdated: boolean }>(this.matchURL, obj);
   }
 
+  // Req 6 : Search Matches By team Name
+  searchMatchesByTeamName(teamName: string) {
+    return this.httpClient.get<{ msg: string, matches: any }>(this.matchURL + "/search/" + teamName);
+  }
 }

@@ -32,6 +32,7 @@
                         <li *ngIf="!isLoggedIn()"><a routerLink="signin" class="nav-link">Login</a></li>
                         <li *ngIf="!isLoggedIn()"><a routerLink="signup" class="nav-link">Signup</a></li>
                         <li ><a routerLink="weather" class="nav-link">Weather</a></li>
+                        <li ><a routerLink="searchMatches" class="nav-link">Search</a></li>
                         <li *ngIf="isLoggedIn()"><a class="nav-link">
                                 Welcome {{user.fName}} {{user.lName}}
                             </a></li>

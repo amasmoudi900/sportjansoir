@@ -15,6 +15,7 @@ import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { AddStadiumComponent } from './components/add-stadium/add-stadium.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { SearchMatchesComponent } from './components/search-matches/search-matches.component';
 
 export const routes: Routes = [
     // http://localhost:4200 => Home Component
@@ -39,4 +40,5 @@ export const routes: Routes = [
     { path: "teamInfo/:id", component: TeamInfoComponent },
     { path: "editTeam/:id", component: EditTeamComponent },
     { path: "weather", component: WeatherComponent },
+    { path: "searchMatches", component: SearchMatchesComponent },
 ];
