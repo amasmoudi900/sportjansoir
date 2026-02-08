@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class WeatherService {
 
-  weatherURL: string = "http://localhost:3000/weather";
+  weatherURL: string = "http://localhost:3000/api/weather";
   constructor(private httpClient: HttpClient) { }
 
   searchWeather(obj: any) {
